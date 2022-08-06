@@ -1,0 +1,40 @@
+%% 
+%     COURSE: Master MATLAB through guided problem-solving
+%     SECTION: Vectors and variables
+%     VIDEO: Create vectors and matrices
+%     Instructor: mikexcohen.com
+%
+%%
+% make a row vector using square brackets
+vect = [1 2 3 4 5 6];
+
+% make a column vector using semicolons
+vect = [1;2;3;4;5;6];
+
+% make a column vector by transposing a row vector
+vect = [1 2 3 4 5 6]';
+vect = transpose([1 2 3 4 5 6]);
+%%
+% create a 2x3 matrix
+matr = [1 2 3  ; 6 7 8] 
+%%
+% or transpose a 3x2 matrix!
+matr = [1 2; 3 4 ; 5 6] 
+transpose_mat = [1 2; 3 4 ; 5 6]'
+
+% make a row vector of ones
+onesvect=ones(1,4);
+
+% column vector of .25
+quartervect = ones(1,4)*0.25;
+quartervect_2 = zeros(1,4)+0.25
+
+% matrix of random numbers
+
+random_matr = randn(4,3) %normal distribuition matrix 
+% transpose that matrix and store as a new matrix
+transpose_mat_1 = random_matr'
+
+transpose_mat_2 = transpose(random_matr)
+
+%%
