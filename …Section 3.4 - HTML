@@ -1,26 +1,65 @@
-<html>
-<body>
-<table>
-<tr><td> 0.59786data </td><td> ` </td><td>
-<tr><td> -1.2813data </td><td> H </td><td>
-<tr><td> -2.2033data </td><td> < </td><td>
-<tr><td> -0.57125data </td><td> T </td><td>
-<tr><td> 0.214data </td><td> L </td><td>
-<tr><td> 0.94238data </td><td> j </td><td>
-<tr><td> 0.093725data </td><td> i </td><td>
-<tr><td> -1.1223data </td><td> a </td><td>
-<tr><td> 0.30616data </td><td> < </td><td>
-<tr><td> -1.1723data </td><td> 4 </td><td>
-<tr><td> -0.96097data </td><td> Z </td><td>
-<tr><td> -0.65374data </td><td> H </td><td>
-<tr><td> -1.2294data </td><td> t </td><td>
-<tr><td> -0.27097data </td><td> w </td><td>
-<tr><td> -0.89995data </td><td> G </td><td>
-<tr><td> -0.28569data </td><td> k </td><td>
-<tr><td> -0.46242data </td><td> q </td><td>
-<tr><td> -0.40979data </td><td> \ </td><td>
-<tr><td> -0.50354data </td><td> p </td><td>
-<tr><td> 1.2333data </td><td> u </td><td>
-<table>
-<body>
-<html>
+%% 
+%   COURSE: Master MATLAB through guided problem-solving
+%   SECTION: Vectors and variables
+%   VIDEO: html table from MATLAB code
+%   Instructor: mikexcohen.com
+%
+%%
+
+
+% generate some random numbers and characters
+N = 20; % 20 number/character pairs
+Offset = 50;
+numbers = randn(N,19)
+tmptext = char(Offset + randi(70,N,1)) 
+
+
+% clear the screen to facilitate copy/paste
+clc
+
+% html code for header
+disp('<html>')
+disp('<body>')
+
+% html code for table
+disp('<table>')
+
+% loop over elements and print
+for ri=1:N
+    disp([ '<tr><td> ' num2str(numbers(ri)) 'data </td><td> ' tmptext(ri)...
+         ' </td><td>'])
+end
+
+% close html
+fprintf('<table>\n<body>\n<html>\n')
+
+%%
+
+
+%% resulting HTML file%%
+%<html>
+%<body>
+%<table>
+%<tr><td> 0.59786data </td><td> ` </td><td>
+%<tr><td> -1.2813data </td><td> H </td><td>
+%<tr><td> -2.2033data </td><td> < </td><td>
+%<tr><td> -0.57125data </td><td> T </td><td>
+%<tr><td> 0.214data </td><td> L </td><td>
+%<tr><td> 0.94238data </td><td> j </td><td>
+%<tr><td> 0.093725data </td><td> i </td><td>
+%<tr><td> -1.1223data </td><td> a </td><td>
+%<tr><td> 0.30616data </td><td> < </td><td>
+%<tr><td> -1.1723data </td><td> 4 </td><td>
+%<tr><td> -0.96097data </td><td> Z </td><td>
+%<tr><td> -0.65374data </td><td> H </td><td>
+%<tr><td> -1.2294data </td><td> t </td><td>
+%<tr><td> -0.27097data </td><td> w </td><td>
+%<tr><td> -0.89995data </td><td> G </td><td>
+%<tr><td> -0.28569data </td><td> k </td><td>
+%<tr><td> -0.46242data </td><td> q </td><td>
+%<tr><td> -0.40979data </td><td> \ </td><td>
+%<tr><td> -0.50354data </td><td> p </td><td>
+%<tr><td> 1.2333data </td><td> u </td><td>
+%<table>
+%<body>
+%<html>
