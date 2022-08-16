@@ -1,0 +1,85 @@
+%% 
+%     COURSE: Master MATLAB through guided problem-solving
+%    SECTION: Translate formulas into code
+%      VIDEO: Trig functions and Gaussians
+% Instructor: mikexcohen.com
+%
+%%
+
+% sine wave parameters
+time = 0:.01:4*pi;
+ampl = 3;
+phas = pi/3;
+frex = 1;
+
+% compute sine wave
+waveS = ampl * sin(2*pi*frex*time + phas)
+
+% compute cosine
+waveC = ampl * cos(2*pi*frex*time + phas)
+
+% compute tangent
+waveT = ampl * tan(2*pi*frex*time + phas)
+
+
+% plot
+figure(1), clf
+plot(time,waveT,'linew',2)
+xlabel('Time (rad.)')
+ylabel('Amplitude')
+set(gca,'xtick',0:pi/2:time(end),'fontsize',15)
+figure(2), clf
+plot(time,waveS,'linew',2)
+xlabel('Time (rad.)')
+ylabel('Amplitude')
+set(gca,'xtick',0:pi/2:time(end),'fontsize',15)
+figure(3), clf
+plot(time,waveC,'linew',2)
+xlabel('Time (rad.)')
+ylabel('Amplitude')
+set(gca,'xtick',0:pi/2:time(end),'fontsize',15)
+%% Gaussian
+
+% parameters 
+x    = 0:.1:10; % x-axis coordinates
+ampl = 3;       % amplitude
+cent = 7;       % center of peak
+widt = 0.6;      % width of Gaussian
+
+% define numerator and denominator of exponential
+num = -(x - cent).^2;
+den = 2 * widt^2;
+
+% the Gaussian.
+gaus = ampl * exp(num ./ den)
+
+% and plot.
+figure(2), clf
+plot(x,gaus,'linew',2)
+xlabel('X'), ylabel('Y')
+
+%% bonus: Gaussian-tapered tangent
+%list parameters of simulation
+fs   = 8000; %Hz
+time = 0:1/fs:3-1/fs;
+ampl = 3;
+cent = 1.5;
+widt = 0.3;
+frex = 2;
+% define numerator and denominator of exponential
+num = -(time - cent).^2;
+den = 2 * widt^2;
+
+% the Gaussian.
+gaus = ampl * exp(num ./ den)
+
+%trig function
+trigf =  tan(2*pi*time*frex + 0)
+
+% combine into one signal
+wave = trigf .* gaus;
+
+figure(3), clf
+plot(time,wave, 'k','linew',2)
+
+%%
